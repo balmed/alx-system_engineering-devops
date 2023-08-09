@@ -1,2 +1,2 @@
 !/bin/bash
-past -d, - - |cut-d, -f1
+Perl-lne 'print if $.%2==1.'

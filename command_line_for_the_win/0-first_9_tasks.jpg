@@ -7,3 +7,4 @@ touch take-the-command-challenge
 mkdir -p tmp/files
 cp take-the-command-challenge tmp/files
 mv take-the-command-challenge tmp/files
+ls -s tmp/files/take-the-command-challenge take-the-command-challenge

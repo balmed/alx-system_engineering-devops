@@ -1,0 +1,11 @@
+find -delete
+find . -name"*.doc"-delete
+grep GET access.log
+grep -l 500
+ls
+grep -rh 500
+grep -ro ^[0-9]*
+find . -type f | wc -l
+sort access.log
+
+

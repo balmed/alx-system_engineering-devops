@@ -1,0 +1,23 @@
+grep GET access.log | wc -l
+cat split-me.txt | tr ";" "\n"
+echo {1..100}
+sed -l "challenge are difficult/d" **/*.txt
+jq -s add sum-me.txt
+find . -type f -printf "%f\n"
+vm * .*
+ls | tr ' ' '.'
+dirname **/*tf | sort -u
+find -type f -printf '%f\n' | grep ^[0-9]
+sed -n '25p' faces.txt
+tac *
+awk '|c[$0]++' faces.txt
+cat random-numbers.txt | sort | uniq | factor | awk 'NF ==2' | wc -l
+awd 's[$1]++{print $1}' access.log.*
+grep -h -B1 404 **/access.log* | grep -vE '404|--'
+for f in t*; do cmp -s bas* $f || echo $f; done
+cat './.../  /. .the flag.txt'
+grep -P "\t" * | wc -l
+find -type f ! -regex '.*\(exe\|txt\)$' -delete
+rm ./-*
+cat ps-* | sort -k2 -n | uniq
+

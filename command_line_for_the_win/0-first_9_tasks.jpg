@@ -1,0 +1,9 @@
+echo "hello world"
+pwd
+ls
+cat access.log
+tail -5 access.log
+touch take-the-command-challenge
+mkdir -p tmp/files
+cp take-the-command-challenge tmp/files
+mv take-the-command-challenge tmp/files

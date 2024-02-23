@@ -1,5 +1,5 @@
-# execute pkill command to kill bashscript file killmenow
-exec { 'pkill':
-  command => 'pkill killmenow',
-  path    => ['/usr/bin', '/bin']
+# Install flask
+package { 'flask':
+  ensure   => '2.1.0',
+  provider => 'pip3'
 }

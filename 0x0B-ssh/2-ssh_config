@@ -1,7 +1,11 @@
 # SSH Config File
-#
-Host web-01
-	Hostname 18.234.107.205 
-	User ubuntu
-	PasswordAuthentication no
-	IdentityFile ~/.ssh/school
+
+Include /etc/ssh/ssh_config.d/*.conf
+
+Host *
+    User ubuntu
+    PasswordAuthentication no
+    IdentityFile ~/.ssh/school
+    SendEnv LANG LC_*
+    HashKnownHosts yes 
+    GSSAPIAuthentication yes

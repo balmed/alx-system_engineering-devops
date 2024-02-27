@@ -1,3 +1,3 @@
 # start Apache so as to return a
 # page conatining Hello Holberton
-service apache2 start
+service apache start

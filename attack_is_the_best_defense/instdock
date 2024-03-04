@@ -1,0 +1,6 @@
+#!/bin/bash
+sudo apt-get update
+sudo apt-get install -y ca-certificates curl
+sudo mkdir -m 0755 -p /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker-archive-keyring.gpg
+sudo chmod a+r /etc/apt/keyrings/docker-archive-keyring.gpg

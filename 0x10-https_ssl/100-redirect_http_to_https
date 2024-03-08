@@ -48,7 +48,7 @@ defaults
 
 frontend www-frontend
 	bind *:80
-	bind *:443 ssl crt /etc/haproxy/certs/mouadmed.tech.pem
+	bind *:443 ssl crt /etc/haproxy/certs/www.mouadmed.tech.pem
 
 	redirect scheme https code 301 if !{ ssl_fc }
 	# if configuration for certbot pass to certbot backend

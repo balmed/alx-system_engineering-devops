@@ -1,5 +1,4 @@
-
-bal
+global
         log /dev/log    local0
         log /dev/log    local1 notice
         chroot /var/lib/haproxy
@@ -47,6 +46,6 @@ frontend mouadmed-frontend-https
         default_backend mouadmed-backend
 
 backend mouadmed-backend
-        balance roundrobin
-        server 511112-web-01 18.204.16.219:80 check
-        server 511112-web-02 52.72.20.22:80 check
+       balance roundrobin
+       server 511112-web-01 18.204.16.219:80 check
+       server 511112-web-02 52.27.20.22:80 check

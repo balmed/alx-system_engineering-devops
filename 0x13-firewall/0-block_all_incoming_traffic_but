@@ -1,0 +1,23 @@
+echo -e "Updating\n"
+
+sudo apt-get update
+
+echo -e "Installing UFW_Uncomplicated Firewall\n"
+
+sudo apt-get install -y ufw
+
+echo -e "configuring UFW(Uncomplicated Firewall)\n"
+
+# Deny Incoming and allow outgoing
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+
+# Allow ports ssh_http_https
+sudo ufw allow 22
+sudo ufw allow 80
+sudo ufw allow 443
+
+# Enable Firewall
+sudo ufw enable
+
+echo -e "Completed.\n"

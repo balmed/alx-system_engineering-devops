@@ -33,4 +33,3 @@ if __name__ == '__main__':
             """A little Something"""
     with open('todo_all_employees.json', 'w') as f:
         json.dump(users_dict, f)
-

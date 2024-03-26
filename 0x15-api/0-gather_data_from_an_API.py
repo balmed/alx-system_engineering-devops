@@ -1,38 +1,30 @@
 #!/usr/bin/python3
+'''
+gather employee data from API
+'''
 
-"""[task 0, get rest api]
-"""
 import requests
-from sys import argv
+import sys
+import re
 
-
-def get_user(id):
-    """get the user
-    Args:
-        id (integer: user id]
-    """
-    url = 'https://jsonplaceholder.typicode.com/'
-    users = requests.get(url + 'users', params={'id': id}).json()
-    name = users[0]['name']
-    url = 'https://jsonplaceholder.typicode.com/'
-    todos = requests.get(url + 'todos', params={'userId': id}).json()
-    return([name, todos])
-
-
-def show(data):
-    name = data[0]
-    todos = data[1]
-    n = 0
-    str_to_print = ''
-    for task in todos:
-        if task['completed'] is True:
-            n += 1
-            str_to_print += '\t ' + task['title'] + '\n'
-    print('Employee {} is done with tasks({}/{}):'.format(name, n, len(todos)))
-    print(str_to_print, end='')
-
+REST_API = "https://jsonplaceholder.typicode.com"
 
 if __name__ == '__main__':
-    data = get_user(argv[1])
-    show(data)
-
+    if len(sys.argv) > 1:
+        if re.fullmatch(r'\d+', sys.argv[1]):
+            id = int(sys.argv[1])
+            req = requests.get('{}/users/{}'.format(REST_API, id)).json()
+            task_req = requests.get('{}/todos'.format(REST_API)).json()
+            emp_name = req.get('name')
+            tasks = list(filter(lambda x: x.get('userId') == id, task_req))
+            completed_tasks = list(filter(lambda x: x.get('completed'), tasks))
+            print(
+                'Employee {} is done with tasks({}/{}):'.format(
+                    emp_name,
+                    len(completed_tasks),
+                    len(tasks)
+                )
+            )
+            if len(completed_tasks) > 0:
+                for task in completed_tasks:
+                    print('\t {}'.format(task.get('title')))

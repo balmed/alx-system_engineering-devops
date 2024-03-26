@@ -4,7 +4,6 @@
 import requests
 import sys
 import re
-import csv
 
 REST_API = "https://jsonplaceholder.typicode.com"
 

@@ -11,7 +11,7 @@ if __name__ == '__main__':
     """ANYTHING"""
     user_name = res.json().get('username')
     tk = url_user + '/todos'
-    res = requests.get(task)
+    res = requests.get(tk)
     tks = res.json()
 
     with open('{}.csv'.format(user), 'w') as csvfile:

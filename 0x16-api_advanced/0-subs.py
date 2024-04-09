@@ -14,14 +14,13 @@ def number_of_subscribers(subreddit):
     Returns:
         [int]: [# of subscribers]
     """
-    URL = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-    about_info = requests.get(URL, headers={"User-Agent": "dairof7"},
+    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
+    about_info = requests.get(url, headers={"User-Agent": "Lizzie"},
                               allow_redirects=False)
     if about_info.status_code == 200:
         return about_info.json()['data']['subscribers']
     else:
         return 0
-
 
 if __name__ == "__main__":
     pass

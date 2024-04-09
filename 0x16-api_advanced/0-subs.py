@@ -15,7 +15,7 @@ def number_of_subscribers(subreddit):
         [int]: [# of subscribers]
     """
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-    about_info = requests.get(url, headers={"User-Agent": "AppleWebKit"},
+    about_info = requests.get(url, headers={"User-Agent": "Mozilla/5.0"},
                               allow_redirects=False)
     if about_info.status_code == 200:
         return about_info.json()['data']['subscribers']

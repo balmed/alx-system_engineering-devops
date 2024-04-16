@@ -1,4 +1,4 @@
-t]
+[Unit]
 Description = HBNB
 After = network.target
 
